@@ -14,6 +14,7 @@ import { RouteConfig, ROUTER_DIRECTIVES, AsyncRoute } from '@angular/router-depr
 	new AsyncRoute({
 		path: '/dashboard', 
 		name: 'Dashboard', 
+		useAsDefault:true,
 		loader:() => new Promise(resolve => {
 			(<any>require).ensure(['app/dashboard/dashboard.component'], require => resolve(require('app/dashboard/dashboard.component').DashboardComponent));
 		})

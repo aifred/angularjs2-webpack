@@ -1,5 +1,6 @@
 // import the plugins
 const gulp = require('gulp');
+const connect = require('gulp-connect');
 const concat = require('gulp-concat');
 const uglify = require('gulp-uglify');
 const jshint = require('gulp-jshint');
@@ -11,9 +12,6 @@ const zip = require('gulp-zip');
 const del = require('del');
 const typescript = require('gulp-typescript');
 const tscConfig = require('./tsconfig.json');
-const webpack = require('webpack-stream');
-const WebpackDevServer = require('webpack-dev-server');
-const webpackConfig = require('./webpack.config.js');
 
 // store the source files. These should be customized to work with your application
 var jsFiles = ['app/**/*.js','*.js'];
@@ -37,7 +35,7 @@ var path2sp = './Users/Aifred/Documents/sp_cmdln/';
   ============================================================================================================
 */
 // runs all of the build tasks at the same time
-gulp.task('build-all', ['compile','webpack:build','build-js', 'build-styles', 'build-html', 'build-assets']);
+gulp.task('build-all', ['compile','build-js', 'build-styles', 'build-html', 'build-assets']);
 
 // builds all files when launching gulp
 gulp.task('default', function() {
@@ -125,27 +123,17 @@ gulp.task('package', function() {
         .pipe(zip('scriptPortlet.zip'))
         .pipe(gulp.dest('dist'));
 });
-gulp.task("webpack:build", function(callback) {
-  // modify some webpack config options
-  var myConfig = Object.create(webpackConfig);
-  myConfig.plugins = myConfig.plugins.concat(
-    new webpack.DefinePlugin({
-      "process.env": {
-        // This has effect on the react lib size
-        "NODE_ENV": JSON.stringify("production")
-      }
-    }),
-    new webpack.optimize.DedupePlugin(),
-    new webpack.optimize.UglifyJsPlugin()
-  );
 
-  // run webpack
-  webpack(myConfig, function(err, stats) {
-    if(err) throw new gutil.PluginError("webpack:build", err);
-    gutil.log("[webpack:build]", stats.toString({
-      colors: true
-    }));
-    callback();
+// copy static asset folder to 'dist' to run server
+gulp.task('copyStaticToDist', function() {
+  gulp.src('assets/**/*',{ base: './' })
+      .pipe(gulp.dest(distFolder));
+});
+// Start a lightweight server to test in build
+gulp.task('connect',['copyStaticToDist'],function() {
+  connect.server({
+    root:'dist',
+    port: 8080
   });
 });
 /* 
@@ -167,40 +155,7 @@ gulp.task('watch', function() {
   gulp.watch(assets, function() { runSequence('build-assets') });
 });
 
-// modify some webpack config options
-var myDevConfig = Object.create(webpackConfig);
-myDevConfig.devtool = "sourcemap";
-myDevConfig.debug = true;
-// create a single instance of the compiler to allow caching
-var devCompiler = webpack(myDevConfig);
-gulp.task("webpack:build-dev", function(callback) {
-  // run webpack
-  devCompiler.run(function(err, stats) {
-    if(err) throw new gutil.PluginError("webpack:build-dev", err);
-    gutil.log("[webpack:build-dev]", stats.toString({
-      colors: true
-    }));
-    callback();
-  });
-});
-// task to start a development server
-gulp.task("webpack-dev-server", function(callback) {
-  // modify some webpack config options
-  var myConfig = Object.create(webpackConfig);
-  myConfig.devtool = "eval";
-  myConfig.debug = true;
 
-  // Start a webpack-dev-server
-  new WebpackDevServer(webpack(myConfig), {
-    publicPath: "/" + myConfig.output.publicPath,
-    stats: {
-      colors: true
-    }
-  }).listen(8080, "localhost", function(err) {
-    if(err) throw new gutil.PluginError("webpack-dev-server", err);
-    gutil.log("[webpack-dev-server]", "http://localhost:8080/webpack-dev-server/index.html");
-  });
-});
 /* 
   ============================================================================================================
                                           END DEVELOPMENT TASK CONFIGURATIONS
