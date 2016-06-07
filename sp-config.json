@@ -1,0 +1,16 @@
+{
+	"wcmContentName":"AngularJS2 script portlet",
+	"excludes": [
+    	"^bin$",
+    	"^lib$",
+    	"^src$",
+    	"^\\.classpath$",
+    	"^\\.project$",
+    	"^sp-config.json$",
+    	"^sp-cmdln.log$",
+    	"^sp.bat$",
+    	"^sp.sh$",
+    	"node_modules",
+    	"^release"
+  	]	
+}

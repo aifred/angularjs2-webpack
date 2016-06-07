@@ -1,0 +1,8 @@
+<ul>
+	<li *ngFor="let link of links">
+		<a [routerLink]="[link.routerLink]" (click)="setTitle(link.name)" [ngClass]="{active:isActive, visited:isVisited}">
+			{{ link.name }}
+		</a>
+	</li>
+</ul>
+<!-- {{diagnostic}} -->
