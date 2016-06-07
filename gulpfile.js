@@ -125,12 +125,13 @@ gulp.task('package', function() {
 });
 
 // copy static asset folder to 'dist' to run server
-gulp.task('copyStaticToDist', function() {
-  gulp.src('assets/**/*',{ base: './' })
-      .pipe(gulp.dest(distFolder));
+gulp.task('copyCssToDist', function() {
+  gulp.src('assets/css/*',{ base: './' })
+      .pipe(minifyCss())
+      .pipe(gulp.dest(distFolder));  
 });
 // Start a lightweight server to test in build
-gulp.task('connect',['copyStaticToDist'],function() {
+gulp.task('connect',['copyCssToDist'],function() {
   connect.server({
     root:'dist',
     port: 8080

@@ -1,8 +1,6 @@
 import { Component } from '@angular/core';
 import { RouteConfig, ROUTER_DIRECTIVES, AsyncRoute } from '@angular/router-deprecated';
 
-//import { DashboardComponent } from 'app/dashboard/dashboard.component';
-
 @Component({
   selector: 'my-app',
   template: require('./app.component.html'),
@@ -10,7 +8,6 @@ import { RouteConfig, ROUTER_DIRECTIVES, AsyncRoute } from '@angular/router-depr
   directives: [ROUTER_DIRECTIVES]
 })
 @RouteConfig([
-	//{path: '/dashboard', name: 'Dashboard', component: DashboardComponent, useAsDefault:true},
 	new AsyncRoute({
 		path: '/dashboard', 
 		name: 'Dashboard', 

@@ -10,7 +10,7 @@
 //import 'rxjs';
 
 // jquery
-import 'jquery';
+//import 'jquery';
 
 // bootstrap
-import 'bootstrap';
+//import 'bootstrap';
