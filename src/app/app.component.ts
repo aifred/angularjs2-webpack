@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouteConfig, ROUTER_DIRECTIVES, AsyncRoute } from '@angular/router-deprecated';
+import { RouteConfig, ROUTER_DIRECTIVES, AsyncRoute, Redirect } from '@angular/router-deprecated';
 
 @Component({
   selector: 'my-app',
@@ -18,7 +18,7 @@ import { RouteConfig, ROUTER_DIRECTIVES, AsyncRoute } from '@angular/router-depr
 	}),
 	//{path: '/boilerplate', name: 'Boilerplate', component: BoilerplateComponent},
 	new AsyncRoute({
-		path: '/boilerplate', 
+		path: '/boilerplate/...', 
 		name: 'Boilerplate', 
 		loader:() => new Promise(resolve => {
 			(<any>require).ensure(['app/boilerplate/boilerplate.component'], require => resolve(require('app/boilerplate/boilerplate.component').BoilerplateComponent));
