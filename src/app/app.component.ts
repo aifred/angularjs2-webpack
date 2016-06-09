@@ -9,19 +9,18 @@ import { RouteConfig, ROUTER_DIRECTIVES, AsyncRoute, Redirect } from '@angular/r
 })
 @RouteConfig([
 	new AsyncRoute({
-		path: '/dashboard', 
-		name: 'Dashboard', 
+		path: '/boilerplate1', 
+		name: 'Boilerplate1', 
 		useAsDefault:true,
 		loader:() => new Promise(resolve => {
-			(<any>require).ensure(['app/dashboard/dashboard.component'], require => resolve(require('app/dashboard/dashboard.component').DashboardComponent));
+			(<any>require).ensure(['app/boilerplate1/boilerplate1.component'], require => resolve(require('app/boilerplate1/boilerplate1.component').Boilerplate1Component));
 		})
 	}),
-	//{path: '/boilerplate', name: 'Boilerplate', component: BoilerplateComponent},
 	new AsyncRoute({
-		path: '/boilerplate/...', 
-		name: 'Boilerplate', 
+		path: '/boilerplate2/...', 
+		name: 'Boilerplate2', 
 		loader:() => new Promise(resolve => {
-			(<any>require).ensure(['app/boilerplate/boilerplate.component'], require => resolve(require('app/boilerplate/boilerplate.component').BoilerplateComponent));
+			(<any>require).ensure(['app/boilerplate2/boilerplate2.component'], require => resolve(require('app/boilerplate2/boilerplate2.component').Boilerplate2Component));
 		})
 	})
 ])

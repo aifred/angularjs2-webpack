@@ -1,8 +1,8 @@
 import { NavigationLink } from './navigationLink';
 
 export var LINKS: NavigationLink[] = [
-  { "name":"Dashboard", "routerLink":"Dashboard", "url":"http://google.com", "isActive":true, "isVisited":false },
-  { "name":"Boilerplate", "routerLink":"Boilerplate", "url":"http://google.com", "isActive":true, "isVisited":false },
-  { "name":"Link C", "routerLink":"Dashboard", "url":"http://google.com", "isActive":true, "isVisited":false },
-  { "name":"Link D", "routerLink":"Dashboard", "url":"http://google.com", "isActive":true, "isVisited":false }
+  { "name":"Dashboard", "routerLink":"Boilerplate1", "url":"http://google.com", "isActive":true, "isVisited":false },
+  { "name":"Boilerplate", "routerLink":"Boilerplate2", "url":"http://google.com", "isActive":true, "isVisited":false },
+  { "name":"Link C", "routerLink":"Boilerplate1", "url":"http://google.com", "isActive":true, "isVisited":false },
+  { "name":"Link D", "routerLink":"Boilerplate1", "url":"http://google.com", "isActive":true, "isVisited":false }
 ];
