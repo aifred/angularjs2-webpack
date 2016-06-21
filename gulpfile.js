@@ -148,6 +148,11 @@ gulp.task('connect',['copyCssToDist'],function() {
                                           DEVELOPMENT TASK CONFIGURATIONS
   ============================================================================================================
 */
+// copy static asset folder to 'dist' to run server
+gulp.task('copyJsonToDist', function() {
+  gulp.src('src/app/service/**/*',{ base: './' })
+      .pipe(gulp.dest(distFolder));  
+});
 // Task to constantly watch for changes in the folders to trigger the appropriate task to run
 gulp.task('watch', function() {
   gulp.watch(htmlFiles, function() { runSequence('build-html') });

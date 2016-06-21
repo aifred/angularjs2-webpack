@@ -5,7 +5,7 @@ var commonConfig = require('./webpack.common.js');
 var helpers = require('./helpers');
 var path = require('path');
 
-const ENV = process.env.NODE_ENV = process.env.ENV = 'PROD';
+const ENV = process.env.NODE_ENV = process.env.ENV = 'PORTLET';
 
 module.exports = webpackMerge(commonConfig, {
 	// devtool: 'source-map',
@@ -15,6 +15,9 @@ module.exports = webpackMerge(commonConfig, {
 		filename: '[name].[hash].js',
 		chunkFilename: '[id].[hash].chunk.js'
 	},
+  // externals:{
+  //   ""
+  // },
 	htmlLoader: {
 		minimize: false // workaround for ng2
 	},
@@ -28,6 +31,8 @@ module.exports = webpackMerge(commonConfig, {
 		]
 	},
 	plugins: [
+    // ignore external devDependencies
+    new webpack.IgnorePlugin(/@angular/),
 		// stops the build if any error occurs
 		new webpack.NoErrorsPlugin(),
 		// detects identical files and removes them from the output

@@ -1,0 +1,32 @@
+<div class="row">
+	<div class="col-md-6">
+		<h1>E-Service Listings</h1>
+	</div>
+	<div class="col-md-offset-4 col-md-2 ">
+		<button class="btn btn-default center-block" (click)="gotoCreateNewBoilerplate2()">New eService</button>
+	</div>
+	<table class="table">
+		<tr>
+			<th>Id</th>
+			<th>E-ServiceName</th>
+			<th>E-Service Id</th>
+			<th>NRIC</th>
+			<th>Deleted?</th>
+			<th>Created By</th>
+			<th>Created On</th>
+			<th>Updated By</th>
+			<th>Updated On</th>
+		</tr>
+		<tr *ngFor="let eService of eservices" (click)="gotoExistingBoilerplate2(eService)">
+			<td>{{ eService.id }}</td>
+			<td>{{ eService.eservicename }}</td>
+			<td>{{ eService.eserviceid }}</td>
+			<td>{{ eService.nric }}</td>
+			<td>{{ eService.deleteflag }}</td>
+			<td>{{ eService.createdby }}</td>
+			<td>{{ eService.createdon }}</td>
+			<td>{{ eService.updatedby }}</td>
+			<td>{{ eService.updatedon }}</td>
+		</tr>
+	</table>
+</div>

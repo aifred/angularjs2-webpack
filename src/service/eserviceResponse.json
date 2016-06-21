@@ -1,0 +1,106 @@
+{
+	{
+		"status": "true",
+		"message": "Success",
+		"boilerplateList": [{
+			"id": 1,
+			"eservicename": "Updated Test-Eservice",
+			"eserviceid": "003",
+			"nric": "U1234578A",
+			"deleteflag": "N",
+			"version": 3,
+			"createdby": "ADMIN",
+			"createdon": "2016-05-31 14:01:02.521",
+			"updatedby": "ADMIN",
+			"updatedon": "2016-05-31 14:01:02.521"
+		}, {
+			"id": 13,
+			"eservicename": "Test-Eservice",
+			"eserviceid": "002",
+			"nric": "S1234578A",
+			"deleteflag": "N",
+			"version": 0,
+			"createdby": "ADMIN",
+			"createdon": "2016-05-31 14:01:02.521",
+			"updatedby": "ADMIN",
+			"updatedon": "2016-05-31 14:01:02.521"
+		}, {
+			"id": 14,
+			"eservicename": "Test-Eservice",
+			"eserviceid": "002",
+			"nric": "S1234578A",
+			"deleteflag": "N",
+			"version": 0,
+			"createdby": "ADMIN",
+			"createdon": "2016-05-31 14:01:02.521",
+			"updatedby": "ADMIN",
+			"updatedon": "2016-05-31 14:01:02.521"
+		}, {
+			"id": 15,
+			"eservicename": "Test-Eservice",
+			"eserviceid": "002",
+			"nric": "S1234578A",
+			"deleteflag": "N",
+			"version": 0,
+			"createdby": "ADMIN",
+			"createdon": "2016-05-31 14:01:02.521",
+			"updatedby": "ADMIN",
+			"updatedon": "2016-05-31 14:01:02.521"
+		}, {
+			"id": 16,
+			"eservicename": "Test-Eservice",
+			"eserviceid": "002",
+			"nric": "S1234578A",
+			"deleteflag": "N",
+			"version": 0,
+			"createdby": "ADMIN",
+			"createdon": "2016-05-31 14:01:02.521",
+			"updatedby": "ADMIN",
+			"updatedon": "2016-05-31 14:01:02.521"
+		}, {
+			"id": 17,
+			"eservicename": "Test-Eservice",
+			"eserviceid": "002",
+			"nric": "S1234578A",
+			"deleteflag": "N",
+			"version": 0,
+			"createdby": "ADMIN",
+			"createdon": "2016-05-31 14:01:02.521",
+			"updatedby": "ADMIN",
+			"updatedon": "2016-05-31 14:01:02.521"
+		}, {
+			"id": 20,
+			"eservicename": "Test-Eservice",
+			"eserviceid": "002",
+			"nric": "S1234578A",
+			"deleteflag": "N",
+			"version": 0,
+			"createdby": "ADMIN",
+			"createdon": "2016-05-31 14:01:02.521",
+			"updatedby": "ADMIN",
+			"updatedon": "2016-05-31 14:01:02.521"
+		}, {
+			"id": 23,
+			"eservicename": "Test-Eservice",
+			"eserviceid": "002",
+			"nric": "S1234578A",
+			"deleteflag": "N",
+			"version": 0,
+			"createdby": "ADMIN",
+			"createdon": "2016-05-31 14:01:02.521",
+			"updatedby": "ADMIN",
+			"updatedon": "2016-05-31 14:01:02.521"
+		}, {
+			"id": 73,
+			"eservicename": "Test-Eservice",
+			"eserviceid": "002",
+			"nric": "S1234578A",
+			"deleteflag": "N",
+			"version": 0,
+			"createdby": "ADMIN",
+			"createdon": "2016-05-31 14:01:02.521",
+			"updatedby": "ADMIN",
+			"updatedon": "2016-05-31 14:01:02.521"
+		}]
+	}
+}

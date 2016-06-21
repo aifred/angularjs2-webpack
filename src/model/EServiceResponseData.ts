@@ -10,7 +10,16 @@ export class EServiceResponseData {
 	private _updatedBy: string;
 	private _updatedOn: string;
 
-	constructor(newId: number, newEserviceName: string, newEserviceId: string, newNric: string, newDeleteFlag: string, newVersion: number, newCreatedBy: string, newCreatedOn: string, newUpdatedBy: string, newUpdatedOn: string) {
+	constructor(newId: number = null,
+							newEserviceName: string = null,
+							newEserviceId: string = null,
+							newNric: string = null,
+							newDeleteFlag: string = null,
+							newVersion: number = null,
+							newCreatedBy: string = null,
+							newCreatedOn: string = null,
+							newUpdatedBy: string = null,
+							newUpdatedOn: string = null) {
 		this.id = newId;
 		this.eserviceName = newEserviceName;
 		this.eserviceId = newEserviceId;
@@ -46,7 +55,7 @@ export class EServiceResponseData {
 
 	get nric(): string {
 		return this._nric;
-	} 
+	}
 	set nric(newNric: string) {
 		this._nric = newNric;
 	}

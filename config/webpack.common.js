@@ -7,7 +7,12 @@ var path = require('path');
 module.exports = {
 	entry: {
 		'polyfills': './src/polyfills.ts',
-		'vendor': './src/vendor.ts',
+		'vendor': ["jquery","@angular/core","@angular/router-deprecated",
+							 "@angular/http","@angular/common","@angular/platform-browser",
+						 	 "rxjs/add/observable/throw","rxjs/add/operator/catch",
+						 	 "rxjs/add/operator/debounceTime","rxjs/add/operator/distinctUntilChanged",
+						   "rxjs/add/operator/map","rxjs/add/operator/switchMap",
+						 	 "rxjs/add/operator/toPromise"],
 		'app': './src/main.ts'
 	},
 	resolve: {
@@ -17,7 +22,10 @@ module.exports = {
 		alias:{
 			model: helpers.root('src/model'),
 			service: helpers.root('src/service'),
-			app: helpers.root('src/app')
+			enum: helpers.root('src/enum'),
+			app: helpers.root('src/app'),
+			src: helpers.root('src'),
+			config: helpers.root('config')
 		}
 	},
 	module: {
@@ -35,8 +43,14 @@ module.exports = {
 				loader: 'html'
 			},
 			{
-				test: /\.(png|jpe?g|gif|svg|woff|woff2|ttf|eot|ico)$/,
-				loader: 'file?name=assets/[name].[hash].[ext]'
+			 // ASSET LOADER
+			 test: /\.(woff|woff2|ttf|eot)$/,
+			 loader: 'file'
+			},
+			{
+			 //IMAGE LOADER
+			 test: /\.(jpeg|png|gif|svg|jpg)$/i,
+			 loader:'file-loader?name=[path][name].[ext]'
 			},
 			{
 				test: /\.css$/,
@@ -46,7 +60,7 @@ module.exports = {
 			{
 				test: /\.css$/,
 				include: helpers.root('app'),
-				loader: 'css'				
+				loader: 'css'
 			}
 		]
 	},

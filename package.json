@@ -1,5 +1,5 @@
 {
-  "name": "angular2-quickstart",
+  "name": "Script_Portlet",
   "version": "1.0.0",
   "watch": {
     "dev": {
@@ -9,9 +9,10 @@
   "scripts": {
     "start": "webpack-dev-server --inline --progress --port 8080",
     "test": "karma start",
-    "build": "rimraf dist && webpack --config config/webpack.prod.js --progress --profile --bail && gulp connect",
-    "postinstall": "typings install",
-    "dev": "rimraf dist && webpack --config config/webpack.dev.js --progress --profile && webpack-dev-server --inline --progress --port 8080 --hot "
+    "prod": "rimraf dist && webpack --config config/webpack.prod.js --progress --profile --bail && gulp connect -w",
+    "portlet": "rimraf dist && webpack --config config/webpack.scriptPortlet.js --progress --profile --bail --display-exclude --display-modules && gulp sp-push",
+    "dev": "rimraf dist && webpack --config config/webpack.dev.js --progress --profile && webpack-dev-server --inline --progress --port 8080 --hot ",
+    "postinstall": "typings install"
   },
   "license": "ISC",
   "dependencies": {
@@ -24,18 +25,20 @@
     "@angular/router": "2.0.0-rc.1",
     "@angular/router-deprecated": "2.0.0-rc.1",
     "@angular/upgrade": "2.0.0-rc.1",
-    "systemjs": "0.19.27",
+    "bootstrap": "^3.3.6",
     "core-js": "^2.4.0",
+    "ng2-file-upload": "^1.0.3",
     "reflect-metadata": "^0.1.3",
     "rxjs": "5.0.0-beta.6",
-    "zone.js": "^0.6.12",
-    "bootstrap": "^3.3.6"
+    "systemjs": "0.19.27",
+    "zone.js": "^0.6.12"
   },
   "devDependencies": {
     "babel-core": "^6.9.1",
     "babel-loader": "^6.2.4",
     "babel-polyfill": "^6.9.1",
     "concurrently": "^2.0.0",
+    "copy-webpack-plugin": "^3.0.1",
     "css-loader": "^0.23.1",
     "css-to-string-loader": "^0.1.1",
     "del": "^2.2.0",
@@ -55,6 +58,7 @@
     "html-loader": "^0.4.3",
     "html-webpack-plugin": "^2.19.0",
     "jquery": "^2.2.4",
+    "jshint": "^2.9.2",
     "json-loader": "^0.5.4",
     "lite-server": "^2.2.0",
     "npm-watch": "^0.1.4",
@@ -67,6 +71,7 @@
     "ts-loader": "^0.8.2",
     "typescript": "^1.8.10",
     "typings": "^1.0.4",
+    "url-loader": "^0.5.7",
     "webpack": "^1.13.1",
     "webpack-dev-server": "^1.14.1",
     "webpack-merge": "^0.13.0",

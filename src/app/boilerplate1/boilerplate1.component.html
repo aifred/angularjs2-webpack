@@ -1,6 +1,6 @@
 <div class="row bg-danger">
 	<div class="col-xs-12 col-sm-12 col-md-12">
-		<h1 >Hello from Angular 2 App with Webpack</h1>		
+		<h1 >Hello from Angular 2 App with Webpack</h1>
 	</div>
 </div>
 <div class="row">
@@ -8,6 +8,23 @@
 		<main-nav></main-nav>
 	</div>
 	<div class="col-xs-9 col-sm-10 col-md-10 bg-info">
-		<h1>This should contain all the relevant contents</h1>
+		<h1>Demo page for Swagger to Typescript Service - Petsore</h1>
+	  <p>If the response is a 404, you will need to visit <a href="http://petstore.swagger.io/#!/pet/addPet">here</a> to manually insert a new pet record to test it out. As this link is open to public, someone may have deleted the pet record from the server.</p>
+		<table class="table" *ngIf="pet">
+			<tr>
+				<th>ID</th>
+				<th>Name</th>
+				<th>Status</th>
+			</tr>
+			<tr>
+				<td>{{ pet.id }}</td>
+				<td>{{ pet.name }}</td>
+				<td>{{ pet.status }}</td>
+			</tr>
+		</table>
+		<hr>
+		<h1>Dynamic Image Resolution Test</h1>
+		<p>To test the dynamic selection of img based on the browser resolution, change the resolution to width of less than 795px. A picture of coffee bean will be shown. If you were to increase the width to a larger width, the picture of a surfer surfing in a wave will be shown instead.</p>
+		<img src="{{imgUrl}}/assets/img/small.jpg" srcset="{{imgUrl}}/assets/img/medium.jpg 1280w, assets/img/large.jpeg 2160w"/>
 	</div>
 </div>

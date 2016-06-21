@@ -11,11 +11,25 @@ import { NavComponent } from 'app/common/nav/nav.component';
 })
 @RouteConfig([
 	new AsyncRoute({
-		path: '/', 
-		name: 'Boilerplate2List', 
+		path: '/',
+		name: 'Boilerplate2List',
 		useAsDefault:true,
 		loader:() => new Promise(resolve => {
-			(<any>require).ensure(['app/boilerplate2/boilerplate2List.component'], require => resolve(require('app/boilerplate2/boilerplate2List.component').Boilerplate2ListComponent));
+			(<any>require).ensure(['app/boilerplate2/boilerplate2-list.component'], require => resolve(require('app/boilerplate2/boilerplate2-list.component').Boilerplate2ListComponent));
+		})
+	}),
+	new AsyncRoute({
+		path: '/new',
+		name: 'CreateNewBoilerplate2',
+		loader:() => new Promise(resolve => {
+			(<any>require).ensure(['app/boilerplate2/boilerplate2-detail.component'], require => resolve(require('app/boilerplate2/boilerplate2-detail.component').Boilerplate2DetailComponent));
+		})
+	}),
+  new AsyncRoute({
+		path: '/:id',
+		name: 'Boilerplate2Detail',
+		loader:() => new Promise(resolve => {
+			(<any>require).ensure(['app/boilerplate2/boilerplate2-detail.component'], require => resolve(require('app/boilerplate2/boilerplate2-detail.component').Boilerplate2DetailComponent));
 		})
 	})
 ])
