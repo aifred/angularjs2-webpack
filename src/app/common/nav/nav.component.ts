@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ROUTER_DIRECTIVES } from '@angular/router-deprecated';
+import { ROUTER_DIRECTIVES } from '@angular/router';
 import { Title } from '@angular/platform-browser';
 
 import { NavigationService } from 'service/navigation.service';
@@ -12,7 +12,7 @@ import { NavigationLink } from 'app/common/nav/navigationLink.ts';
   providers: [NavigationService],
   directives: [ROUTER_DIRECTIVES]
 })
-export class NavComponent { 
+export class NavComponent {
 	links: NavigationLink[];
 
   constructor(navigationService: NavigationService,private titleService: Title) {
@@ -24,7 +24,7 @@ export class NavComponent {
   }
 
 	// TODO: Remove this when we're done
-	get diagnostic() { 
-		return JSON.stringify(this.links); 
+	get diagnostic() {
+		return JSON.stringify(this.links);
 	}
 }

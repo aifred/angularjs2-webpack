@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { RouteParams } from '@angular/router-deprecated';
+import { Router, ActivatedRoute } from '@angular/router';
+import { Observable } from 'rxjs/Observable';
 
 import { EServiceResponseData } from 'model/EServiceResponseData';
 import { EServiceService } from 'service/eService.service';
@@ -21,20 +22,26 @@ export class Boilerplate2DetailComponent implements OnInit {
   private response: RestResponse;
 
 	constructor(
-    private routeParams: RouteParams,
+    private route: ActivatedRoute,
+    private router: Router,
     private eserviceService: EServiceService) {
   }
 
 	ngOnInit() {
-    let id = (this.routeParams.get('id') !== null ? +this.routeParams.get('id') : null);
-    if(id !== null) {
-      this.operationType = OperationType.UPDATE;
-      this.eserviceService.getEService(id)
-                  .subscribe(
-                    eservice => this.eservice = eservice[0],
-                    error => this.errorMessage = error
-                  );
-    }
+    let id = (this.route.params.subscribe(p => p['id']) !== null ?  +this.route.params.subscribe(p => p['id']) : null);
+    console.log(id);
+
+    this.route.params.subscribe(params => {
+      let id = (params['id'] !== null ? +params['id'] : null);
+      if(id !== null) {
+        this.operationType = OperationType.UPDATE;
+        this.eserviceService.getEService(id)
+                    .subscribe(
+                      eservice => this.eservice = eservice[0],
+                      error => this.errorMessage = error
+                    );
+      }
+    });
 	}
 
   goBack() {
