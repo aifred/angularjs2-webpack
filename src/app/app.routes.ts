@@ -15,9 +15,7 @@ import { Boilerplate3Component } from 'app/boilerplate3/boilerplate3.component';
 export const routes: RouterConfig = [
   { path: 'boilerplate1', component: Boilerplate1Component },
   ...Boilerplate2Routes,
-  { path: 'boilerplate3', component: resolve => {
-    (<any>require).ensure(['app/boilerplate3/boilerplate3.component'], require => resolve(require('app/boilerplate3/boilerplate3.component').Boilerplate3Component)); }
-  }
+  { path: 'boilerplate3', component: Boilerplate3Component }
 ];
 
 export const APP_ROUTER_PROVIDERS = [
