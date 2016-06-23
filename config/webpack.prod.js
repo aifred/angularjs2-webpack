@@ -19,11 +19,11 @@ module.exports = webpackMerge(commonConfig, {
 		minimize: false // workaround for ng2
 	},
 	module: {
-		loaders: [
+		preLoaders:[
 			{
-				test: /\.js$/,
-				loader: 'js',
-				include: [path.resolve(__dirname, "src")]
+				test: /\.ts$/,
+				loader: 'preprocessor-loader?config='+helpers.root('config')+'/preprocess.prod.json',
+				exclude: /node_modules/
 			}
 		]
 	},

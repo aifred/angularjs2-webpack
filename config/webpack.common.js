@@ -29,6 +29,13 @@ module.exports = {
 		}
 	},
 	module: {
+		preLoaders:[
+		// 	{
+		// 		test: /\.ts$/,
+		// 		loader: 'preprocessor-loader?config='+helpers.root('config')+'/preprocess.dev.json',
+		// 		exclude: /node_modules/
+		// 	}
+		],
 		loaders: [
 			{
 				test: /\.json$/,
@@ -36,7 +43,8 @@ module.exports = {
 			},
 			{
 				test: /\.ts$/,
-				loader: 'ts'
+				loader: 'awesome-typescript-loader',
+				exclude: /node_modules/
 			},
 			{
 				test: /\.html$/,
@@ -75,5 +83,6 @@ module.exports = {
             $: "jquery",
             jQuery: "jquery"
         })
-	]
+	],
+	colors: true
 }

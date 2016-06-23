@@ -9,13 +9,25 @@ var path = require('path');
 const ENV = process.env.NODE_ENV = process.env.ENV = 'DEV';
 
 module.exports = webpackMerge(commonConfig, {
-	debug:true,
-	devtool: 'source-map',
+	// debug:true,
+	// devtool: 'source-map',
 	output: {
 		path: helpers.root('dist'),
 		publicPath: '/',
 		filename: '[name].js',
 		chunkFilename: '[id].chunk.js'
+	},
+	htmlLoader: {
+		minimize: false // workaround for ng2
+	},
+	module: {
+		preLoaders:[
+			{
+				test: /\.ts$/,
+				loader: 'preprocessor-loader?config='+helpers.root('config')+'/preprocess.dev.json',
+				exclude: /node_modules/
+			}
+		]
 	},
 	plugins: [
 		// extracts embedded css as external files, adding cache-busting hash to the filename.

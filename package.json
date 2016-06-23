@@ -6,9 +6,9 @@
       "test": "*"
     }
   },
-  "person":{
-    "name" : "Aifred Ong",
-    "email" : "aifred.ong@accenture.com"
+  "person": {
+    "name": "Aifred Ong",
+    "email": "aifred.ong@accenture.com"
   },
   "scripts": {
     "start": "webpack-dev-server --inline --progress --port 8080",
@@ -29,6 +29,7 @@
     "@angular/router": "2.0.0-rc.3",
     "@angular/router-deprecated": "^2.0.0-rc.2",
     "@angular/upgrade": "^2.0.0-rc.2",
+    "@angularclass/webpack-toolkit": "^1.0.1",
     "bootstrap": "^3.3.6",
     "core-js": "^2.4.0",
     "ng2-file-upload": "^1.0.3",
@@ -38,6 +39,7 @@
     "zone.js": "^0.6.12"
   },
   "devDependencies": {
+    "awesome-typescript-loader": "^1.1.1",
     "babel-core": "^6.9.1",
     "babel-loader": "^6.2.4",
     "babel-polyfill": "^6.9.1",
@@ -46,6 +48,7 @@
     "css-loader": "^0.23.1",
     "css-to-string-loader": "^0.1.1",
     "del": "^2.2.0",
+    "es6-promise-loader": "^1.0.1",
     "extract-text-webpack-plugin": "^1.0.1",
     "file-loader": "^0.8.5",
     "fs": "0.0.2",
@@ -67,6 +70,7 @@
     "lite-server": "^2.2.0",
     "npm-watch": "^0.1.4",
     "null-loader": "^0.1.1",
+    "preprocessor-loader": "^1.0.5",
     "raw-loader": "^0.5.1",
     "rimraf": "^2.5.2",
     "run-sequence": "^1.2.1",

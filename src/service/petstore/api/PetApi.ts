@@ -10,7 +10,8 @@ import 'rxjs/Rx';
 
 @Injectable()
 export class PetApi {
-    protected basePath = 'http://petstore.swagger.io/v2';
+    // protected basePath = 'http://petstore.swagger.io/v2';
+    protected basePath = '@@IPPT_HOSTNAME@@';
     public defaultHeaders : Headers = new Headers();
 
     constructor(protected http: Http, @Optional() basePath: string) {

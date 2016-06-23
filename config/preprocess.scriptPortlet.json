@@ -1,0 +1,13 @@
+{
+  "line"        : true,
+  "file"        : true,
+  "regexes"      : [
+    {
+      "fileName"        : "all",
+      "scope"           : "line",
+      "regex"           : "@@IPPT_HOSTNAME@@",
+      "flags"           : "g",
+      "value"           : "http://ns.sg/eservice/ippt"
+    }
+  ]
+}
