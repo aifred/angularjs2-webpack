@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
+// import { Router, ActivatedRoute } from '@angular/router';
+import { Router, RouteParams } from '@ngrx/router';
 import { Observable } from 'rxjs/Observable';
 
 import { EServiceResponseData } from 'model/EServiceResponseData';
@@ -22,17 +23,19 @@ export class Boilerplate2DetailComponent implements OnInit {
   private response: RestResponse;
 
 	constructor(
-    private route: ActivatedRoute,
+    // private route: ActivatedRoute,
+    private routeParams: RouteParams,
     private router: Router,
     private eserviceService: EServiceService) {
   }
 
 	ngOnInit() {
-    let id = (this.route.params.subscribe(p => p['id']) !== null ?  +this.route.params.subscribe(p => p['id']) : null);
-    console.log(id);
 
-    this.route.params.subscribe(params => {
-      let id = (params['id'] !== null ? +params['id'] : null);
+    // let id = ( !== null ? +this.param.pluck('id') : null);
+    this.routeParams.pluck('id').subscribe(param => {
+      console.log(param);
+      let id = (param !== null ? +param : null);
+      console.log(id);
       if(id !== null) {
         this.operationType = OperationType.UPDATE;
         this.eserviceService.getEService(id)

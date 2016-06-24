@@ -12,7 +12,7 @@ export class EServiceService {
 	constructor(private http: Http) {}
 
 //	private ESERVICE_BASE_URL = 'http://192.168.2.72:10039/boilerplate/retrieveBoilerplate';
-	private ESERVICE_BASE_URL = BASE_URLS.accenture.basePath + BASE_URLS.accenture.eserviceResource.contextRoot; 
+	private ESERVICE_BASE_URL = BASE_URLS.accenture.basePath + BASE_URLS.accenture.eserviceResource.contextRoot;
 
 	createEService(newEservice:EServiceResponseData): Observable<RestResponse> {
 			let body = JSON.stringify({newEservice});

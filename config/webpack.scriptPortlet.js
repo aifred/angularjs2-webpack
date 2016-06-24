@@ -8,16 +8,14 @@ var path = require('path');
 const ENV = process.env.NODE_ENV = process.env.ENV = 'PORTLET';
 
 module.exports = webpackMerge(commonConfig, {
-	// devtool: 'source-map',
+	debug: true,
+	devtool: 'source-map',
 	output: {
 		path: helpers.root('dist'),
 		publicPath: '/',
 		filename: '[name].[hash].js',
 		chunkFilename: '[id].[hash].chunk.js'
 	},
-  // externals:{
-  //   ""
-  // },
 	htmlLoader: {
 		minimize: false // workaround for ng2
 	},
@@ -25,7 +23,7 @@ module.exports = webpackMerge(commonConfig, {
 		preLoaders:[
 			{
 				test: /\.ts$/,
-				loader: 'preprocessor-loader?config='+helpers.root('config')+'/preprocess.scripscriptPortlet.json',
+				loader: 'preprocessor-loader?config='+helpers.root('config')+'/preprocess.scriptPortlet.json',
 				exclude: /node_modules/
 			}
 		]

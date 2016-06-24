@@ -10,7 +10,7 @@ import 'rxjs/Rx';
 
 @Injectable()
 export class EServiceApi {
-    protected basePath = 'http://192.168.2.72:10039/boilerplate';
+    protected basePath = 'http://demo4539349.mockable.io/boilerplate';
     public defaultHeaders : Headers = new Headers();
 
     constructor(protected http: Http, @Optional() basePath: string) {

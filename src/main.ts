@@ -8,7 +8,7 @@ import { AppComponent } from 'app/app.component';
 import { APP_ROUTER_PROVIDERS } from 'app/app.routes';
 
 
-if(process.env.ENV === 'PROD') {
+if(process.env.ENV === 'PROD' || process.env.ENV === 'PORTLET') {
 	enableProdMode();
 }
 

@@ -1,7 +1,10 @@
 <h3>Main Navigation</h3>
 <ul>
 	<li *ngFor="let link of links">
-		<a [routerLink]="[link.routerLink]" (click)="setTitle(link.name)" [ngClass]="{active:isActive, visited:isVisited}">
+		<!-- <a [routerLink]="[link.routerLink]" (click)="setTitle(link.name)" [ngClass]="{active:isActive, visited:isVisited}">
+			{{ link.name }}
+		</a> -->
+		<a linkTo="{{link.routerLink}}" (click)="setTitle(link.name)" [ngClass]="{active:isActive, visited:isVisited}">
 			{{ link.name }}
 		</a>
 	</li>

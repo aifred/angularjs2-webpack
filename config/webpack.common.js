@@ -7,12 +7,7 @@ var path = require('path');
 module.exports = {
 	entry: {
 		'polyfills': './src/polyfills.ts',
-		'vendor': ["jquery","@angular/core","@angular/router-deprecated",
-							 "@angular/http","@angular/common","@angular/platform-browser",
-						 	 "rxjs/add/observable/throw","rxjs/add/operator/catch",
-						 	 "rxjs/add/operator/debounceTime","rxjs/add/operator/distinctUntilChanged",
-						   "rxjs/add/operator/map","rxjs/add/operator/switchMap",
-						 	 "rxjs/add/operator/toPromise"],
+		'vendor': './src/main.ts',
 		'app': './src/main.ts'
 	},
 	resolve: {

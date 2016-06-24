@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router'
+// import { Router } from '@angular/router';
+import { Router } from '@ngrx/router';
 
 import { EServiceService } from 'service/eService.service';
 import { EServiceResponseData } from 'model/EServiceResponseData';
@@ -32,12 +33,14 @@ export class Boilerplate2ListComponent implements OnInit {
 	}
 
   gotoCreateNewBoilerplate2() {
-    let link = ['/boilerplate2/new'];
-    this.router.navigate(link);
+    // let link = ['/boilerplate2/new'];
+    // this.router.navigate(link);
+    this.router.go('/boilerplate2/new');
   }
 
   gotoExistingBoilerplate2(eservice: any) {
-    let link = ['/boilerplate2/:id',{ id: eservice.id }];
-    this.router.navigate(link);
+    // let link = ['/boilerplate2/:id',{ id: eservice.id }];
+    // this.router.navigate(link);
+    this.router.go('/boilerplate2/'+eservice.id);
   }
 }
