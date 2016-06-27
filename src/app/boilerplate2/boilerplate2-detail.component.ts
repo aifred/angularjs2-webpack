@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 // import { Router, ActivatedRoute } from '@angular/router';
 import { Router, RouteParams } from '@ngrx/router';
 import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/operator/pluck';
 
 import { EServiceResponseData } from 'model/EServiceResponseData';
 import { EServiceService } from 'service/eService.service';
@@ -16,35 +17,52 @@ import { OperationType } from 'enum/OperationType';
   directives: []
 })
 export class Boilerplate2DetailComponent implements OnInit {
-  private eservice: EServiceResponseData = new EServiceResponseData();
-  private OPERATION_TYPE = OperationType;
-  private operationType: number = OperationType.CREATE;
-  private errorMessage: any;
-  private response: RestResponse;
+  eservice: EServiceResponseData;
+  OPERATION_TYPE = OperationType;
+  operationType: number = OperationType.CREATE;
+  errorMessage: any;
+  response: RestResponse;
 
 	constructor(
     // private route: ActivatedRoute,
     private routeParams: RouteParams,
     private router: Router,
     private eserviceService: EServiceService) {
+      // always initialise the form variables
+      this.eservice = {};
+
+      // this.eservice = routeParams.pluck<string>('id')
+      //   .distinctUntilChanged()
+      //   .mergeMap(id => {
+      //     console.log(id);
+      //     if(id !== null) {
+      //       this.operationType = OperationType.UPDATE;
+      //       return eserviceService.getEService(id)
+      //                   .subscribe(
+      //                     (eservice) => eservice[0],
+      //                     error => this.errorMessage = error
+      //                   );
+      //     }
+      // });
+
+      // load the details related to the route param
+      routeParams.pluck<string>('id').subscribe(param => {
+        let id = (param !== null && param !== undefined ? +param : null);
+        console.log(id);
+        if(id !== null) {
+          this.operationType = OperationType.UPDATE;
+          eserviceService.getEService(id)
+                      .subscribe(
+                        eservice => this.eservice = eservice[0],
+                        error => this.errorMessage = error
+                      );
+          console.log(this.eservice);
+        }
+      });
   }
 
 	ngOnInit() {
 
-    // let id = ( !== null ? +this.param.pluck('id') : null);
-    this.routeParams.pluck('id').subscribe(param => {
-      console.log(param);
-      let id = (param !== null ? +param : null);
-      console.log(id);
-      if(id !== null) {
-        this.operationType = OperationType.UPDATE;
-        this.eserviceService.getEService(id)
-                    .subscribe(
-                      eservice => this.eservice = eservice[0],
-                      error => this.errorMessage = error
-                    );
-      }
-    });
 	}
 
   goBack() {

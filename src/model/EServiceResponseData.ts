@@ -1,35 +1,26 @@
 export class EServiceResponseData {
-	private _id:number;
-	private _eservicename: string;
-	private _eserviceid: string;
-	private _nric: string;
-	private _deleteFlag: string;
-	private _version: number;
-	private _createdBy: string;
-	private _createdOn: string;
-	private _updatedBy: string;
-	private _updatedOn: string;
+	private _id:number = null;
+	private _eservicename: string = null;
+	private _eserviceid: string = null;
+	private _nric: string = null;
+	private _deleteFlag: string = null;
+	private _version: number = null;
+	private _createdBy: string = null;
+	private _createdOn: string = null;
+	private _updatedBy: string = null;
+	private _updatedOn: string = null;
 
-	constructor(newId: number = null,
-							newEserviceName: string = null,
-							newEserviceId: string = null,
-							newNric: string = null,
-							newDeleteFlag: string = null,
-							newVersion: number = null,
-							newCreatedBy: string = null,
-							newCreatedOn: string = null,
-							newUpdatedBy: string = null,
-							newUpdatedOn: string = null) {
-		this.id = newId;
-		this.eserviceName = newEserviceName;
-		this.eserviceId = newEserviceId;
-		this.nric = newNric;
-		this.deleteFlag = newDeleteFlag;
-		this.version = newVersion;
-		this.createdBy = newCreatedBy;
-		this.createdOn = newCreatedOn;
-		this.updatedBy = newUpdatedBy;
-		this.updatedOn = newUpdatedOn;
+	constructor() {
+		this._id = null;
+		this._eservicename = null;
+		this._eserviceid = null;
+		this._nric = null;
+		this._deleteFlag = null;
+		this._version = null;
+		this._createdBy = null;
+		this._createdOn = null;
+		this._updatedBy = null;
+		this._updatedOn = null;
 	}
 
 	get id(): number {
