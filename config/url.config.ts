@@ -33,17 +33,19 @@ if(process.env.ENV === 'PROD') {
     }
   };
 } else if(process.env.ENV === 'PORTLET') {
+	// Portlet
+	this.BASE_URLS = {
+		"accenture":{
+			"basePath":"http://demo4539349.mockable.io/",
+			"eserviceResource":{
+				"contextRoot":"test"
+			},
+			"staticResource":{
+				"imgBasePath":"http://prod.accenture.com/"
+			}
+		},
+		"petstore":{
 
+		}
+	};
 }
-
-// export var BASE_URLS: any = {
-//   "accenture":{
-//     "basePath":"http://demo4539349.mockable.io/",
-//     "eserviceResource":{
-//       "contextRoot":"test"
-//     }
-//   },
-//   "petstore":{
-//
-//   }
-// };

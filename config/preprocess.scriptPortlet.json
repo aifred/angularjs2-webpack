@@ -8,6 +8,13 @@
       "regex"           : "@@IPPT_HOSTNAME@@",
       "flags"           : "g",
       "value"           : "http://ns.sg/eservice/ippt"
+    },
+    {
+      "fileName"        : "all",
+      "scope"           : "line",
+      "regex"           : "@@APP_BASE_HREF@@",
+      "flags"           : "g",
+      "value"           : "/"
     }
   ]
 }

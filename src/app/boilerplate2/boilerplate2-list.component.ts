@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 // import { Router } from '@angular/router';
 import { Router } from '@ngrx/router';
 
-import { EServiceService } from 'service/eService.service';
-import { EServiceResponseData } from 'model/EServiceResponseData';
+import { EServiceService } from 'service/boilerplate/api/eService.service';
+import { EServiceResponseData } from 'service/boilerplate/model/EServiceResponseData';
 
 @Component({
   selector: 'app-boilerplate2List',

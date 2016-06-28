@@ -7,7 +7,7 @@ import { disableDeprecatedForms, provideForms } from '@angular/forms';
 
 import { AppComponent } from 'app/app.component';
 import { APP_ROUTER_PROVIDERS } from 'app/app.routes';
-import { EServiceService } from 'service/eService.service.ts';
+import { EServiceService } from 'service/boilerplate/api/eService.service.ts';
 
 
 if(process.env.ENV === 'PROD' || process.env.ENV === 'PORTLET') {

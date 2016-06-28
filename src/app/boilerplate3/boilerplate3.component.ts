@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { NavComponent } from 'app/common/nav/nav.component';
+import { EServiceService } from 'service/boilerplate/api/eService.service';
 
 @Component({
   selector: 'app-boilerplate3',
@@ -11,7 +12,14 @@ import { NavComponent } from 'app/common/nav/nav.component';
 })
 export class Boilerplate3Component implements OnInit {
 
-  constructor() {}
+  constructor(eserviceService: EServiceService) {
+    eserviceService.testFailureGetEServices()
+      .subscribe(
+        res => {
+          console.log(res)
+        }
+      );
+  }
 
   ngOnInit() {}
 }

@@ -4,9 +4,9 @@ import { Router, RouteParams } from '@ngrx/router';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/pluck';
 
-import { EServiceResponseData } from 'model/EServiceResponseData';
-import { EServiceService } from 'service/eService.service';
-import { RestResponse } from 'model/RestResponse';
+import { EServiceResponseData } from 'service/boilerplate/model/EServiceResponseData';
+import { EServiceService } from 'service/boilerplate/api/eService.service';
+import { RestResponse } from 'service/boilerplate/model/RestResponse';
 import { OperationType } from 'enum/OperationType';
 
 @Component({
@@ -73,7 +73,7 @@ export class Boilerplate2DetailComponent implements OnInit, OnDestroy {
     this.retrievalSubscription.unsubscribe();
   }
 
-  goBack() {    
+  goBack() {
     window.history.back();
   }
 

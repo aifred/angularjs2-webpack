@@ -1,5 +1,4 @@
-import { RestResponseData } from 'model/RestResponseData';
-//let RestResponseData = require('model/RestResponseData');
+import { RestResponseData } from 'service/boilerplate/model/RestResponseData';
 
 export class RestResponse {
 	private _status: string;

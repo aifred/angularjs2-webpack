@@ -15,7 +15,6 @@ module.exports = {
 		root: helpers.root('src'),
 		//modulesDirectories: ['src','node_modules']
 		alias:{
-			model: helpers.root('src/model'),
 			service: helpers.root('src/service'),
 			enum: helpers.root('src/enum'),
 			app: helpers.root('src/app'),
