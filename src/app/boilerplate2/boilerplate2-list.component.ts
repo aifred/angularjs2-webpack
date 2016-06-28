@@ -9,7 +9,7 @@ import { EServiceResponseData } from 'model/EServiceResponseData';
   selector: 'app-boilerplate2List',
   template: require('./boilerplate2-list.component.html'),
   styles: [require('./boilerplate2-list.component.css').toString()],
-  providers: [EServiceService],
+  providers: [],
   directives: []
 })
 export class Boilerplate2ListComponent implements OnInit {

@@ -24,13 +24,7 @@ module.exports = {
 		}
 	},
 	module: {
-		preLoaders:[
-		// 	{
-		// 		test: /\.ts$/,
-		// 		loader: 'preprocessor-loader?config='+helpers.root('config')+'/preprocess.dev.json',
-		// 		exclude: /node_modules/
-		// 	}
-		],
+		preLoaders:[],
 		loaders: [
 			{
 				test: /\.json$/,
@@ -73,11 +67,7 @@ module.exports = {
 		}),
 		new HtmlWebpackPlugin({
 			template: './index.html'
-		}),
-		new webpack.ProvidePlugin({
-            $: "jquery",
-            jQuery: "jquery"
-        })
+		})
 	],
 	colors: true
 }

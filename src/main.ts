@@ -7,6 +7,7 @@ import { disableDeprecatedForms, provideForms } from '@angular/forms';
 
 import { AppComponent } from 'app/app.component';
 import { APP_ROUTER_PROVIDERS } from 'app/app.routes';
+import { EServiceService } from 'service/eService.service.ts';
 
 
 if(process.env.ENV === 'PROD' || process.env.ENV === 'PORTLET') {
@@ -14,5 +15,6 @@ if(process.env.ENV === 'PROD' || process.env.ENV === 'PORTLET') {
 }
 
 bootstrap(AppComponent,[HTTP_PROVIDERS,APP_ROUTER_PROVIDERS,Title,
-	provide(APP_BASE_HREF,{useValue:'/'}), disableDeprecatedForms(),provideForms()]
+	provide(APP_BASE_HREF,{useValue:'/'}), disableDeprecatedForms(),provideForms(),
+	EServiceService]
 ).catch(err => console.error(err));

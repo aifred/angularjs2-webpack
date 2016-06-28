@@ -31,11 +31,6 @@ export const routes: Routes = [
         },'boilerplate2-list')
       })
     },
-    // loadChildren: () => new Promise(resolve => {
-    //   (<any>require).ensure([], require => {
-    //     resolve(require('app/boilerplate2/boilerplate2.routes').Boilerplate2Routes);
-    //   },'boilerplate2-routes')
-    // })
     loadChildren: () => new Promise(resolve => resolve(require('app/boilerplate2/boilerplate2.routes').Boilerplate2Routes)
     )
   },
