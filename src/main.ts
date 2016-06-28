@@ -15,6 +15,6 @@ if(process.env.ENV === 'PROD' || process.env.ENV === 'PORTLET') {
 }
 
 bootstrap(AppComponent,[HTTP_PROVIDERS,APP_ROUTER_PROVIDERS,Title,
-	provide(APP_BASE_HREF,{useValue:'/'}), disableDeprecatedForms(),provideForms(),
+	provide(APP_BASE_HREF,{useValue:'@@APP_BASE_HREF@@'}), disableDeprecatedForms(),provideForms(),
 	EServiceService]
 ).catch(err => console.error(err));
