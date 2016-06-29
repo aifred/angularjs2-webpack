@@ -11,7 +11,7 @@ import 'rxjs/Rx';
 @Injectable()
 export class PetApi {
     // protected basePath = 'http://petstore.swagger.io/v2';
-    protected basePath = '@@IPPT_HOSTNAME@@';
+    protected basePath = '@@DATAPOWER_BASE_HREF_PUBLIC@@@@IPPT_HOSTNAME@@';
     public defaultHeaders : Headers = new Headers();
 
     constructor(protected http: Http, @Optional() basePath: string) {

@@ -22,7 +22,7 @@ module.exports = webpackMerge(commonConfig, {
 	module: {
 		preLoaders:[
 			{
-				test: /\.ts$/,
+				test: /\.(ts|html)$/,
 				loader: 'preprocessor-loader?config='+helpers.root('config')+'/preprocess.scriptPortlet.json',
 				exclude: /node_modules/
 			}

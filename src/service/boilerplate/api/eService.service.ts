@@ -11,7 +11,6 @@ import { EServiceResponseData } from 'service/boilerplate/model/EServiceResponse
 export class EServiceService {
 	constructor(private http: Http) {}
 
-//	private ESERVICE_BASE_URL = 'http://192.168.2.72:10039/boilerplate/retrieveBoilerplate';
 	private ESERVICE_BASE_URL = BASE_URLS.accenture.basePath + BASE_URLS.accenture.eserviceResource.contextRoot;
 
 	createEService(newEservice:EServiceResponseData): Observable<RestResponse> {
@@ -82,7 +81,8 @@ export class EServiceService {
 		// In a real world app, we might use a remote logging infrastructure
 		// we'd also dig deeeper into error to get a better message
 		let errMsg = (error.message) ? error.message: error.status;
-		console.error(errMsg); // log to console instead
-		return Observable.throw(errMsg);
+		console.error(error); // log to console instead
+		window.location.href = error._body;
+		return Observable.of([]);
 	}
 }

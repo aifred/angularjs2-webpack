@@ -5,9 +5,23 @@
     {
       "fileName"        : "all",
       "scope"           : "line",
+      "regex"           : "@@DATAPOWER_BASE_HREF_PROTECTED@@",
+      "flags"           : "g",
+      "value"           : "<%= datapower_private %>"
+    },
+    {
+      "fileName"        : "all",
+      "scope"           : "line",
+      "regex"           : "@@DATAPOWER_BASE_HREF_PUBLIC@@",
+      "flags"           : "g",
+      "value"           : "<%= datapower_public %>"
+    },
+    {
+      "fileName"        : "all",
+      "scope"           : "line",
       "regex"           : "@@IPPT_HOSTNAME@@",
       "flags"           : "g",
-      "value"           : "http://ns.sg/eservice/ippt"
+      "value"           : "/v1/ippt"
     },
     {
       "fileName"        : "all",
@@ -15,6 +29,13 @@
       "regex"           : "@@APP_BASE_HREF@@",
       "flags"           : "g",
       "value"           : "/"
+    },
+    {
+      "fileName"        : "all",
+      "scope"           : "line",
+      "regex"           : "@@STATIC_BASE_HREF@@",
+      "flags"           : "g",
+      "value"           : "http://prod.ns.sg/static"
     }
   ]
 }
