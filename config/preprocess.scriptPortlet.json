@@ -7,14 +7,14 @@
       "scope"           : "line",
       "regex"           : "@@DATAPOWER_BASE_HREF_PROTECTED@@",
       "flags"           : "g",
-      "value"           : "<%= datapower_private %>"
+      "value"           : "http://api.ns.sg/eservice/protected"
     },
     {
       "fileName"        : "all",
       "scope"           : "line",
       "regex"           : "@@DATAPOWER_BASE_HREF_PUBLIC@@",
       "flags"           : "g",
-      "value"           : "<%= datapower_public %>"
+      "value"           : "http://api.ns.sg/eservice/public"
     },
     {
       "fileName"        : "all",
@@ -28,14 +28,14 @@
       "scope"           : "line",
       "regex"           : "@@APP_BASE_HREF@@",
       "flags"           : "g",
-      "value"           : "/"
+      "value"           : "<%= app_base_href %>"
     },
     {
       "fileName"        : "all",
       "scope"           : "line",
       "regex"           : "@@STATIC_BASE_HREF@@",
       "flags"           : "g",
-      "value"           : "http://prod.ns.sg/static"
+      "value"           : "<%= static_base_href %>"
     }
   ]
 }

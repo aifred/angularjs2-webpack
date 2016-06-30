@@ -12,7 +12,7 @@ module.exports = webpackMerge(commonConfig, {
 	devtool: 'source-map',
 	output: {
 		path: helpers.root('dist'),
-		publicPath: '/',
+		publicPath: '<%= static_base_href %>',
 		filename: '[name].[hash].js',
 		chunkFilename: '[id].[hash].chunk.js'
 	},

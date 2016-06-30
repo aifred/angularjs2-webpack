@@ -82,7 +82,11 @@ export class EServiceService {
 		// we'd also dig deeeper into error to get a better message
 		let errMsg = (error.message) ? error.message: error.status;
 		console.error(error); // log to console instead
-		window.location.href = error._body;
-		return Observable.of([]);
+		console.error(error.headers);
+		if(error.status === 302) {
+				window.location.href = error.url;
+		}
+
+		return Observable.throw("Error Occurred");
 	}
 }

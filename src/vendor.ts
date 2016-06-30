@@ -16,5 +16,6 @@ import "@angular/router-deprecated";
 import "@angular/http";
 import "@angular/common";
 import "@angular/platform-browser";
+import "@angular/platform-browser-dynamic";
 import "@ngrx/router";
 import "@ngrx/core";
