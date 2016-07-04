@@ -28,24 +28,6 @@
 		<h1>Dynamic Image Resolution Test</h1>
 		<p>To test the dynamic selection of img based on the browser resolution, change the resolution to width of less than 795px. A picture of coffee bean will be shown. If you were to increase the width to a larger width, the picture of a surfer surfing in a wave will be shown instead.</p>
 		<img src="{{imgUrl}}/assets/img/small.jpg" srcset="{{imgUrl}}/assets/img/medium.jpg 1280w, assets/img/large.jpeg 2160w"/>
-
-		<hr>
-
-		<h1>Demo for calling swagger client generated from Restlet Studio</h1>
-		<table class="table" *ngIf="eservices">
-			<tr>
-				<th>id</th>
-				<th>eservicename</th>
-				<th>eserviceid</th>
-				<th>nric</th>
-			</tr>
-			<tr *ngFor="let eservice of eservices">
-				<td>{{ eservice.id }}</td>
-				<td>{{ eservice.eservicename }}</td>
-				<td>{{ eservice.eserviceid }}</td>
-				<td>{{ eservice.nric }}</td>
-			</tr>
-		</table>
 	</div>
 
 </div>
