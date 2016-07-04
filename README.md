@@ -10,7 +10,7 @@ The following applications are required to build and deploy the application.
 -----------------------
 1. Navigate to the unzipped project folder in either Terminal or Node Command Line Interface (NodeCLI).
 2. In your Terminal or NodeCLI, type 'npm install' to install all the relevant dependencies that are required to run the application.
-3. Once completed, you can type 'npm run dev' to run the application via localhost on port 8080. Otherwise you can type 'npm run build' to generate a production-ready script portlet application.
+3. Once completed, you can type 'npm run dev' to run the application via localhost on port 8080. Otherwise you can type 'npm run prod' to generate a production-ready script portlet application.
 
 ## Tech
 -----------------------

@@ -35,7 +35,7 @@
       "scope"           : "line",
       "regex"           : "@@STATIC_BASE_HREF@@",
       "flags"           : "g",
-      "value"           : "http://localhost:8080/assets/css/styles.css"
+      "value"           : "assets/"
     }
   ]
 }
